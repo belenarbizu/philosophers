@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: barbizu- <barbizu-@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/28 11:15:33 by barbizu-          #+#    #+#             */
+/*   Updated: 2022/12/28 11:15:36 by barbizu-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "philo.h"
 
 int	ft_atoi(const char *str)
 {
-	long long		n;
-	int				cnt;
-	int				sign;
+	long long	n;
+	int			cnt;
+	int			sign;
 
 	cnt = 0;
 	n = 0;
@@ -37,30 +48,30 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-int check_num(char **str)
+int	check_num(char **str)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 1;
-    while (str[i])
-    {
-        j = 0;
-        while (str[i][j])
-        {
-            if (!ft_isdigit(str[i][j]))
-                return (1);
-            j++;
-        }
-        i++;
-    }
-    return (0);
+	i = 1;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j])
+		{
+			if (!ft_isdigit(str[i][j]))
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
 
-long long   get_time(void)
+long long	get_time(void)
 {
-    struct timeval  tv;
+	struct timeval	tv;
 
-    gettimeofday(&tv, NULL);
-    return(tv.tv_sec * 1000 + tv.tv_usec / 1000);
+	gettimeofday(&tv, NULL);
+	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
